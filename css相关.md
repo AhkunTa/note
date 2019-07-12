@@ -169,7 +169,7 @@
 		}
 
 
-[原文地址](https://github.com/islittle/Web-Developer/blob/master/css-notes/compatible-with-less-than-12px-fontsize.md)
+转自GitHub[原文地址](https://github.com/islittle/Web-Developer/blob/master/css-notes/compatible-with-less-than-12px-fontsize.md)
 
 ------------------
 
