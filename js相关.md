@@ -135,13 +135,13 @@
 	}
 
 	4 ES6实现
-	function unique5(arr){
+	function unique4(arr){
 	  var x = new Set(arr);
 	 return [...x];
 	}
 	
 	5 优化遍历数组法（推荐）
-	function unique4(arr){
+	function unique5(arr){
 	  var hash=[];
 	  for (var i = 0; i < arr.length; i++) {
 	    for (var j = i+1; j < arr.length; j++) {
@@ -152,6 +152,21 @@
 	      hash.push(arr[i]);
 	  }
 	  return hash;
+	}
+	
+
+	6 js hash 去重
+	// 去重只需遍历要去重的数组次数 优化性能	
+	function unique6() {
+	
+		var hash={},newArr=[];
+		for(let key in arr){
+			if(!hash[arr[key]]){
+				hash[arr[key]] = true;
+				newArr.push(arr[key])
+			}
+		}
+		return newArr;
 	}
 
 ----------------------
