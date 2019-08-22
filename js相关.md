@@ -414,10 +414,27 @@
 - 加上一个很小的数 因为在chrome下满足 1.5500001 进位效果
    
 		(5.175 + 0.00001).toFixed(2)
-- 最推荐的方法 两者混用
+- 最推荐的方法 两者混用 **经试验错误移除**
 
+		// 错误代码 
+		// 试验8765.335 在chrome下保留两位为 8765.33 错误
 		(Math.round(1.35 * 10) /10).toFixed(1)
 
+- 最推荐的方法 [stackoverflow解决方法](https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary)
+		
+		function roundNumber(num, scale) {
+		  if(!("" + num).includes("e")) {
+		    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+		  } else {
+		    var arr = ("" + num).split("e");
+		    var sig = ""
+		    if(+arr[1] + scale > 0) {
+		      sig = "+";
+		    }
+		    return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+		  }
+		}
+		
 - 还有网上一些巨长的代码 ~ 
 
 ------------		
