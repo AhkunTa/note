@@ -1,12 +1,25 @@
 #Css 相关
 ###1 背景图片全屏
+	.background {
+	    width: 100%;
+	    height:100%;
+	    position: fixed;
+	    background: url(../asset/images/bg.png) no-repeat ;
+	    background-size: 100% 100%;
+	    background-position: 0 0
+	}
 	
-    width: 100%;
-    height:100%;
-    position: fixed;
-    background: url(../asset/images/bg.png) no-repeat ;
-    background-size: 100% 100%;
-    background-position: 0 0
+	.background {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	}
+	
 
 ------
 
