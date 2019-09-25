@@ -157,7 +157,7 @@
 
 	6 js hash 去重
 	// 去重只需遍历要去重的数组次数 优化性能	
-	function unique6() {
+	function unique6(arr) {
 	
 		var hash={},newArr=[];
 		for(let key in arr){

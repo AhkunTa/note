@@ -224,3 +224,41 @@
 	    border-top: none;
 	}
 
+------------
+### 11 first-child first-of-type 伪类区别
+
+1. first-child 表示在一组兄弟元素中的第一个元素 [`mdn地址`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child)
+2. first-of-type  表示一组兄弟元素中其类型`(同一个标签元素)`的第一个元素。   [`mdn地址`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type)
+
+		<article>
+		  <div>第一个div</div>
+		  <div>测试 <span>第一个span</span>!</div>
+		  <div>This <em>nested `em` is first</em>, but this <em>nested `em` is last</em>!</div>
+		  <div>This <span>nested `span` gets styled</span>!</div>
+		  <b>This `b` qualifies!</b>
+		  <div>This is the final `div`.</div>
+		</article>
+
+-----------
+### 12 translate translation transform animate 动画
+
+1. **transition**在一定时间之内，一组css属性变换到另一组属性的动画展示过程
+
+		.move-active {
+			opacity: 1;
+			left: 0;
+		}
+
+		.div {
+			transition: left 1s ease-in ,opacity 2s ease-in;
+			opacity: 0;
+			left: 300px;
+		}
+		transition: all .5s ease-in;
+
+		通过动态添加 active 类名来控制动画
+
+2. transform 是变换、变形，是css3的一个属性，和其他width，height属性一样
+3. translate 是transform的属性值，是指元素进行2D变换
+	
+		transform：translate(-20px,0)
