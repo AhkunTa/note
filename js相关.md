@@ -448,3 +448,35 @@
 -----------
 
 
+###16 js中`for in`和`for of`
+- 简单来说 `for in` 遍历key而 `for of` 遍历value 
+##### 官方文档这么解释
+> for...in 语句以任意顺序迭代对象的可枚举属性。
+> 
+> for...of 语句遍历可迭代对象定义要迭代的数据。
+
+
+
+>  for in 在可迭代对象（包括 Array，Map，Set，String，TypedArray，arguments 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句
+
+
+- **for...of循环调用遍历器接口，数组的遍历器接口只返回具有数字索引的属性。这一点跟for...in循环也不一样。 如下**
+
+		let arr = [3, 5, 7];
+		arr.foo = 'hello';
+		
+		for (let i in arr) {
+		  console.log(i); // "0", "1", "2", "foo"
+		}
+		
+		for (let i of arr) {
+		  console.log(i); //  "3", "5", "7"
+		}
+
+
+
+**总结**
+
+1.  推荐在循环对象属性的时候，使用for...in,在遍历数组的时候的时候使用for...of
+2.	for...of不能循环普通的对象，需要通过和Object.keys()搭配使用
+3.  for...of的兼容性不是很好，推荐还是使用for...in [兼容性点这里](https://caniuse.com/#search=for%20...%20of)
