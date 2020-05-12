@@ -480,3 +480,36 @@
 1.  推荐在循环对象属性的时候，使用for...in,在遍历数组的时候的时候使用for...of
 2.	for...of不能循环普通的对象，需要通过和Object.keys()搭配使用
 3.  for...of的兼容性不是很好，推荐还是使用for...in [兼容性点这里](https://caniuse.com/#search=for%20...%20of)
+
+### 17 js 中判断数据类型方法toString.call(obj)
+
+	    jquery 中判断类型方法
+
+		jQuery.each( "Boolean Number String Function Array Date RegExp Object Error Symbol".split( " " ),
+		function( i, name ) {
+		  class2type[ "[object " + name + "]" ] = name.toLowerCase();
+		} );
+		function toType( obj ) {
+		  if ( obj == null ) {
+		    return obj + "";
+		  }
+		
+		  // Support: Android <=2.3 only (functionish RegExp)
+		  return typeof obj === "object" || typeof obj === "function" ?
+		    class2type[ toString.call( obj ) ] || "object" :
+		    typeof obj;
+		}
+
+
+			{
+			"[object Array]": "array",
+			"[object Boolean]": "boolean",
+			"[object Date]": "date",
+			"[object Error]": "error",
+			"[object Function]": "function",
+			"[object Number]": "number",
+			"[object Object]": "object",
+			"[object RegExp]": "regexp",
+			"[object String]": "string",
+			"[object Symbol]": "symbol"
+			}
