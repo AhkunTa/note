@@ -231,7 +231,8 @@
 2. first-of-type  表示一组兄弟元素中其类型`(同一个标签元素)`的第一个元素。   [`mdn地址`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type)
 
 		<article>
-		  <div>第一个div</div>
+		  <div
+。>第一个div</div>
 		  <div>测试 <span>第一个span</span>!</div>
 		  <div>This <em>nested `em` is first</em>, but this <em>nested `em` is last</em>!</div>
 		  <div>This <span>nested `span` gets styled</span>!</div>

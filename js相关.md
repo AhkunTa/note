@@ -513,3 +513,75 @@
 			"[object String]": "string",
 			"[object Symbol]": "symbol"
 			}
+
+
+### 18 Array.prototype.map() && Array.prototype.forEach()
+#### 1.map
+	map() 方法创建一个新数组，其结果是该数组中的每个元素是调用一次提供的函数后的返回值。
+
+	callback
+	生成新数组元素的函数，使用三个参数：
+		currentValue
+			callback 数组中正在处理的当前元素。
+		index可选
+			callback 数组中正在处理的当前元素的索引。
+		array可选
+			map 方法调用的数组。
+	thisArg可选
+		执行 callback 函数时值被用作this。
+
+
+  	arr..map(function(currentValue,index,array){
+		console.log(this)       // thisArg
+		
+	},thisArg)
+
+> 注1 因为map生成一个新数组，当你不打算使用返回的新数组却使用map是违背设计初衷的，请用forEach或者for-of替代。你不该使用map: A)你不打算使用返回的新数组，或/且 B) 你没有从回调函数中返回值
+
+> 注2 如果使用箭头函数表达式来传入函数参数， thisArg 参数会被忽略，因为箭头函数在词法上绑定了 this 值。
+
+#### 2.forEach 参数传递和map一样
+   
+
+### 19 js 数据类型判断
+
+1. null `===`
+		
+
+		obj === null
+
+2. undefined `typeof`
+	
+> 和 === 的区别 当 obj 都没申明时 === 会报 is not defined 错误
+> typeof 则不会
+
+		typeof obj === undefined
+			
+	
+3 基本数据类型判断`toString.call(obj)` jquery 内源码
+
+	function toType( obj ) {
+	  if ( obj == null ) {
+		// 通过 '' 空字符串，免于调用toString方法
+		// null undefined
+	    return obj + "";
+	  }
+	  return typeof obj === "object" || typeof obj === "function" ?
+	    class2type[ toString.call( obj ) ] || "object" :
+	    typeof obj;
+	}
+	class2type = {
+		"[object Array]": "array",
+		"[object Boolean]": "boolean",
+		"[object Date]": "date",
+		"[object Error]": "error",
+		"[object Function]": "function",
+		"[object Number]": "number",
+		"[object Object]": "object",
+		"[object RegExp]": "regexp",
+		"[object String]": "string",
+		"[object Symbol]": "symbol",
+	}
+
+
+
