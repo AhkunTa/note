@@ -585,3 +585,13 @@
 
 
 
+### 20 js '==' 运算符
+
+| #   | 参数1      					| 参数2 									|  转换  |
+| --- | --------- 					| --------  							|:--------|
+| 1    |    null   					|  undefined        					| 不转换返回true |
+| 2    |    null 或undefined   		|  其他任何非 null 或 undefined 的类型    | 不转换返回false |
+| 3    |    基础数据类型 String Boolean Number等|  基础数据类型 String Boolean Number等| 转换为Number类型 |
+| 4    |    基础数据类型 String Boolean Number等|  引用数据类型Date对象        			| 将基础数据类型转换为数字；将 Date 对象转换为原始类型（优先尝试 toString 方法，再尝试 valueOf 方法）  |
+| 5    |    基础数据类型 String Boolean Number等|  引用数据类型 非Date对象 Array Object 等| 将基础数据类型转换为数字；将引用数据类型转换（优先尝试 valueOf 方法，再尝试 toString 方法）  |
+| 6    |    引用数据类型						  |  引用数据类型 						| 判断对象的引用的指针 |
